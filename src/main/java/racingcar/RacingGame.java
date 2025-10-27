@@ -12,11 +12,7 @@ public class RacingGame {
         this.cars = cars;
     }
 
-    public void playRacingGame() {
-        runRound();
-    }
-
-    private void runRound() {
+    public void playOneRound() {
         for (Car car : this.cars) {
             int randomNumber = Random.getNumber();
             moveCarRandomly(car,randomNumber);
