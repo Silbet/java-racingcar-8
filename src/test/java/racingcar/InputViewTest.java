@@ -27,7 +27,7 @@ public class InputViewTest {
     }
 
     @Test
-    void 입력값이_비어있으면_예외가_발생한다() {
+    void 자동차_이름_입력값이_비어있으면_예외가_발생한다() {
         InputView inputView = new InputView();
         String input = "";
         assertThatThrownBy(() -> inputView.inputCars(input))
@@ -36,11 +36,22 @@ public class InputViewTest {
     }
 
     @Test
-    void 입력값이_공백이면_예외가_발생한다() {
+    void 자동차_이름_입력값이_공백이면_예외가_발생한다() {
         InputView inputView = new InputView();
         String input = "  ";
         assertThatThrownBy(() -> inputView.inputCars(input))
                 .isInstanceOf(IllegalArgumentException.class)
                 .hasMessage("공백만 입력했습니다.");
     }
+
+    @Test
+    void 라운드_횟수_입력값이_비어있으면_예외가_발생한다() {
+        InputView inputView = new InputView();
+        String input = "";
+        assertThatThrownBy(() -> inputView.inputRoundCount(input))
+                .isInstanceOf(IllegalArgumentException.class)
+                .hasMessage("문자를 입력하지 않았습니다.");
+    }
+
+
 }
