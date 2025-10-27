@@ -39,7 +39,7 @@ public class InputView {
         if (input.isEmpty()) {
             throw new IllegalArgumentException("문자를 입력하지 않았습니다.");
         }
-
+        RoundCountValidator.validate(input);
         return Integer.parseInt(input);
     }
 }
