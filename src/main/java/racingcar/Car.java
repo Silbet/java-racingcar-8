@@ -9,6 +9,10 @@ public class Car {
         this.movedDistance = 0;
     }
 
+    public int getPosition() {
+        return this.movedDistance;
+    }
+
     public void moveForward() {
         this.movedDistance++;
     }
