@@ -14,7 +14,7 @@ public class InputView {
         return names;
     }
 
-    private List<String> trimString(String string) {
+    List<String> trimString(String string) {
         if (string.isEmpty()) {
             throw new IllegalArgumentException("문자를 입력하지 않았습니다.");
         }
@@ -22,7 +22,7 @@ public class InputView {
             throw new IllegalArgumentException("공백만 입력했습니다.");
         }
 
-        String[] parts = string.split(DELIMITER);
+        String[] parts = string.split(DELIMITER, -1);
         return new ArrayList<>(Arrays.asList(parts));
     }
 }
