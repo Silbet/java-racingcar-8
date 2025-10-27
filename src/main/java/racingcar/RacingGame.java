@@ -4,7 +4,7 @@ import java.util.List;
 
 
 public class RacingGame {
-    private List<Car> Cars;
+    private List<Car> cars;
     private static final int MOVE_FORWARD_STANDARD = 4;
 
     public void playRacingGame() {
