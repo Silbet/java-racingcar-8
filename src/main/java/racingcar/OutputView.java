@@ -13,4 +13,9 @@ public class OutputView {
     private String getPositionBar(int position) {
         return "-".repeat(position);
     }
+
+    public void printWinners(List<String> winners) {
+        String joinedNames = String.join(", ", winners);
+        System.out.println("최종 우승자 : " + joinedNames);
+    }
 }
