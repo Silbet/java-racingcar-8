@@ -25,4 +25,8 @@ public class InputView {
         String[] parts = string.split(DELIMITER, -1);
         return new ArrayList<>(Arrays.asList(parts));
     }
+
+    public int inputRoundCount(String input) {
+        return Integer.parseInt(input);
+    }
 }
