@@ -9,6 +9,10 @@ public class Car {
         this.movedDistance = 0;
     }
 
+    public String getName() {
+        return this.name;
+    }
+
     public int getPosition() {
         return this.movedDistance;
     }
