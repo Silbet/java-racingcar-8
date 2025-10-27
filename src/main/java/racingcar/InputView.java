@@ -27,6 +27,10 @@ public class InputView {
     }
 
     public int inputRoundCount(String input) {
+        if (input.isEmpty()) {
+            throw new IllegalArgumentException("문자를 입력하지 않았습니다.");
+        }
+
         return Integer.parseInt(input);
     }
 }
