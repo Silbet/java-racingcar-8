@@ -9,8 +9,7 @@ public class InputView {
 
     private static final String DELIMITER = ",";
 
-    public List<String> inputCars() {
-        String input = Console.readLine();
+    public List<String> inputCars(String input) {
         return trimString(input);
     }
 
