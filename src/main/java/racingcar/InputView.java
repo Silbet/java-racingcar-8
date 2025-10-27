@@ -15,8 +15,11 @@ public class InputView {
     }
 
     private List<String> trimString(String string) {
-        if (string.trim().isEmpty()) {
+        if (string.isEmpty()) {
             throw new IllegalArgumentException("문자를 입력하지 않았습니다.");
+        }
+        if (string.trim().isEmpty()) {
+            throw new IllegalArgumentException("공백만 입력했습니다.");
         }
 
         String[] parts = string.split(DELIMITER);
