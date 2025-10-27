@@ -1,7 +1,10 @@
 package racingcar;
 
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.assertj.core.api.AssertionsForClassTypes.assertThatThrownBy;
+
 import java.util.List;
+import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
 
@@ -19,5 +22,23 @@ public class InputViewTest {
         List<String> expected = List.of(expectedJoined.split("\\|"));
 
         assertThat(result).containsExactlyElementsOf(expected);
+    }
+
+    @Test
+    void 입력값이_비어있으면_예외가_발생한다() {
+        InputView inputView = new InputView();
+        String input = "";
+        assertThatThrownBy(() -> inputView.inputCars(input))
+                .isInstanceOf(IllegalArgumentException.class)
+                .hasMessage("문자를 입력하지 않았습니다.");
+    }
+
+    @Test
+    void 입력값이_공백이면_예외가_발생한다() {
+        InputView inputView = new InputView();
+        String input = "  ";
+        assertThatThrownBy(() -> inputView.inputCars(input))
+                .isInstanceOf(IllegalArgumentException.class)
+                .hasMessage("공백만 입력했습니다.");
     }
 }
