@@ -13,13 +13,15 @@ public class InputViewTest {
     @CsvSource({
             "'qwer,asd,zxcv', qwer|asd|zxcv",
             "'car 1,ca r2', car 1|ca r2",
-            "'a,ab,abc,abcd', a|ab|abc|abcd"
+            "'a,ab,abc,abcd', a|ab|abc|abcd",
+            "'a,b,', 'a|b|'",
+            "'a,b, ', 'a|b| '"
     })
     void 자동차를_쉼표로_구분해_리스트로_반환한다(String input, String expectedJoined) {
         InputView inputView = new InputView();
 
-        List<String> result = inputView.inputCars(input);
-        List<String> expected = List.of(expectedJoined.split("\\|"));
+        List<String> result = inputView.trimString(input);
+        List<String> expected = List.of(expectedJoined.split("\\|", -1));
 
         assertThat(result).containsExactlyElementsOf(expected);
     }
